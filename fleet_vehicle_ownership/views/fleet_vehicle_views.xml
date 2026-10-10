@@ -1,13 +1,41 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record model="ir.ui.view" id="view_fleet_vehicle_form_inherited">
         <field name="name">fleet.vehicle.form.inherited</field>
         <field name="model">fleet.vehicle</field>
         <field name="inherit_id" ref="fleet.fleet_vehicle_view_form" />
         <field name="arch" type="xml">
-            <field name="company_id" position="after">
-                <field name="owner_id" />
-            </field>
+            <!-- Reemplazamos el h2 o la estructura original de la matrícula -->
+            <xpath expr="//h2[field[@name='license_plate']]" position="replace">
+                <group col="2">
+                    <group>
+                        <label for="license_plate" />
+                        <h2>
+                            <field name="license_plate" nolabel="1" class="w-100"
+                                placeholder="Por ejemplo, A012345" />
+                        </h2>
+                    </group>
+                    <group>
+                        <label for="owner_id" />
+                        <br/>
+                        <h2>
+                            <field name="owner_id" nolabel="1" class="w-100"
+                                placeholder="Por ejemplo, Juan Pérez" />
+                        </h2>
+                    </group>
+                    <group>
+                        <label for="tag_ids" />
+                        <br/>
+                        <field name="tag_ids" widget="many2many_tags"
+                            options="{'color_field': 'color', 'no_create_edit': True}" nolabel="1" />
+                    </group>
+                </group>
+            </xpath>
+
+            <!-- Eliminamos los elementos viejos de tags si quedaron fuera -->
+            <xpath expr="//label[@for='tag_ids']" position="replace" />
+            <xpath expr="//field[@name='tag_ids']" position="replace" />
+            <xpath expr="//label[@for='license_plate']" position="replace" />
         </field>
     </record>
     <record model="ir.ui.view" id="view_fleet_vehicle_tree_inherited">

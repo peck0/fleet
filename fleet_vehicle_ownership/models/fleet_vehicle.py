@@ -9,7 +9,6 @@ class FleetVehicle(models.Model):
 
     owner_id = fields.Many2one(
         "res.partner",
-        "Owner",
         index=True,
         tracking=True,
         help="Owner of the vehicle",
