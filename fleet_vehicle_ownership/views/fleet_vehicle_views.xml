@@ -10,18 +10,19 @@
                 <group col="2">
                     <group>
                         <label for="license_plate" />
-                        <h2>
+                        <br/>
+                        <h3>
                             <field name="license_plate" nolabel="1" class="w-100"
                                 placeholder="Por ejemplo, A012345" />
-                        </h2>
+                        </h3>
                     </group>
                     <group>
                         <label for="owner_id" />
                         <br/>
-                        <h2>
+                        <h3>
                             <field name="owner_id" nolabel="1" class="w-100"
                                 placeholder="Por ejemplo, Juan Pérez" />
-                        </h2>
+                        </h3>
                     </group>
                     <group>
                         <label for="tag_ids" />
