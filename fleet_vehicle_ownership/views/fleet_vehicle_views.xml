@@ -7,8 +7,8 @@
         <field name="arch" type="xml">
             <!-- Reemplazamos el h2 o la estructura original de la matrícula -->
             <xpath expr="//h2[field[@name='license_plate']]" position="replace">
-                <group col="2">
-                    <group>
+                <group col="4">
+                    <group colspan="3">
                         <label for="license_plate" />
                         <br/>
                         <h3>
@@ -16,7 +16,7 @@
                                 placeholder="Por ejemplo, A012345" />
                         </h3>
                     </group>
-                    <group>
+                    <group colspan="3">
                         <label for="owner_id" />
                         <br/>
                         <h3>
@@ -24,7 +24,7 @@
                                 placeholder="Por ejemplo, Juan Pérez" />
                         </h3>
                     </group>
-                    <group>
+                    <group colspan="2">
                         <label for="tag_ids" />
                         <br/>
                         <field name="tag_ids" widget="many2many_tags"
