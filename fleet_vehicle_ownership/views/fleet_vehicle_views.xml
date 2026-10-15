@@ -8,25 +8,25 @@
             <!-- Reemplazamos el h2 o la estructura original de la matrícula -->
             <xpath expr="//h2[field[@name='license_plate']]" position="replace">
                 <group col="4">
-                    <group colspan="3">
+                    <group colspan="2">
                         <label for="license_plate" />
-                        <br/>
+                        <br />
                         <h3>
-                            <field name="license_plate" nolabel="1" class="w-100"
+                            <field name="license_plate" nolabel="1"
                                 placeholder="Por ejemplo, A012345" />
                         </h3>
                     </group>
-                    <group colspan="3">
+                    <group colspan="2">
                         <label for="owner_id" />
-                        <br/>
+                        <br />
                         <h3>
-                            <field name="owner_id" nolabel="1" class="w-100"
+                            <field name="owner_id" nolabel="1"
                                 placeholder="Por ejemplo, Juan Pérez" />
                         </h3>
                     </group>
                     <group colspan="2">
                         <label for="tag_ids" />
-                        <br/>
+                        <br />
                         <field name="tag_ids" widget="many2many_tags"
                             options="{'color_field': 'color', 'no_create_edit': True}" nolabel="1" />
                     </group>
